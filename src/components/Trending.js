@@ -1,6 +1,6 @@
 import React, {  useEffect, useState } from 'react';
 import axios  from 'axios';
-import { Grid, GridItem, Box, Image,Container,  Badge } from '@chakra-ui/react'
+import { Box, Image,Container,  Badge } from '@chakra-ui/react'
 import { StarIcon } from '@chakra-ui/icons'
 
 export default function Trending() {
@@ -20,6 +20,7 @@ export default function Trending() {
     useEffect( ()=> {
         axios.get('https://api.themoviedb.org/3/trending/all/day?api_key=aea9844cb6188c7686a5bdb55f70eb2a&page=1')
         .then( (result)=> {
+          console.log(result.results);
           setHotList(result.results);
         })
         .catch(function (error) {
@@ -46,10 +47,10 @@ export default function Trending() {
   return (
     <div> 
       <Box boxSize='sm'>
-        <Image src='https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg' alt='Dan Abramov' />
+        <Image src='https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg' alt='Spider-Man: No Way Home' />
       </Box>
       <Container>
-        {hotList.overview}
+        {hotList}
       </Container>
         
       <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
