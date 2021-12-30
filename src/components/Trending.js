@@ -17,12 +17,13 @@ export default function Trending() {
       rating: 4,
     }
 
-    let [page, setPage] = useState(1);
+    let [params, setParams] = useState({page : 1});
 
     useEffect( ()=> {
-        axios.get('https://api.themoviedb.org/3/trending/all/day?api_key=aea9844cb6188c7686a5bdb55f70eb2a&page=1')
+       const apiUrl = 'https://api.themoviedb.org/3/trending/all/day?api_key=aea9844cb6188c7686a5bdb55f70eb2a';
+       
+        axios.get(apiUrl,{params})
         .then( (result)=> {
-          console.log(result.data);
           setHotList(result.data.results);
         })
         .catch(function (error) {
