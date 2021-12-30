@@ -5,23 +5,7 @@ import { StarIcon } from '@chakra-ui/icons'
 
 export default function Trending() {
 
-    let [hotList, setHotList] = useState([{
-      "title": "",
-      "genre_ids": [],
-      "original_language": "",
-      "original_title": "",
-      "poster_path": "",
-      "video": false,
-      "id": 0,
-      "overview": "",
-      "release_date": "",
-      "vote_count": 0,
-      "vote_average": 0,
-      "adult": false,
-      "backdrop_path": "",
-      "popularity": 0,
-      "media_type": ""
-  }]);
+    let [hotList, setHotList] = useState([{}]);
     const property = {
       imageUrl: 'https://bit.ly/2Z4KKcF',
       imageAlt: 'Rear view of modern home with pool',
@@ -36,9 +20,10 @@ export default function Trending() {
     let [page, setPage] = useState(1);
 
     useEffect( ()=> {
-        axios.get('https://api.themoviedb.org/3/trending/all/day?api_key=aea9844cb6188c7686a5bdb55f70eb2a&page='+{page})
+        axios.get('https://api.themoviedb.org/3/trending/all/day?api_key=aea9844cb6188c7686a5bdb55f70eb2a&page=1')
         .then( (result)=> {
-          setHotList([...hotList, ...result.data.results]);
+          console.log(result.data);
+          setHotList(result.data.results);
         })
         .catch(function (error) {
           if (error.response) {
@@ -59,7 +44,8 @@ export default function Trending() {
           }
           console.log(error.config);
         });
-    },[hotList]) ;
+       
+    },[]) ;
 
   return (
     <div> 
@@ -67,7 +53,7 @@ export default function Trending() {
         hotList.map( (a, i)=>{
           return (
           <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden' key={i}>
-            <Image src={'https://image.tmdb.org/t/p/w500'+(hotList[i].poster_path)} alt={hotList[i].title} />
+            <Image src={'https://image.tmdb.org/t/p/w500'+(hotList[i].poster_path)} alt={hotList[i].original_title} />
 
             <Box p='6'>
               <Box display='flex' alignItems='baseline'>
@@ -109,7 +95,7 @@ export default function Trending() {
                   .map((_, i) => (
                     <StarIcon
                       key={i}
-                      color={i < hotList[i].vote_average ? 'teal.500' : 'gray.300'}
+                      color={i < property.rating  ? 'teal.500' : 'gray.300'}
                     />
                   ))}
                 <Box as='span' ml='2' color='gray.600' fontSize='sm'>
