@@ -3,7 +3,7 @@ import { ChakraProvider, theme } from '@chakra-ui/react'
 import ThemeToggler from './components/ThemeToggler';
 import LoginForm from './components/LoginForm';
 import Trending from './components/Trending';
-import SampleComponent from "./components/SampleComponent";
+import Swibc from "./components/Swibc";
 
 import { Link, Route, Switch } from 'react-router-dom';
  
@@ -12,7 +12,7 @@ function App() {
     <div>
       <ChakraProvider theme={theme}>
         <ThemeToggler />
-        <SampleComponent />
+        <Swibc />
           <Switch>
             <Route path="/login">
               <LoginForm></LoginForm>
