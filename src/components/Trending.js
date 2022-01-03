@@ -2,6 +2,7 @@ import React, {  useEffect, useState } from 'react';
 import axios  from 'axios';
 import { Box, Image, Center,  Badge } from '@chakra-ui/react'
 import { StarIcon } from '@chakra-ui/icons'
+import '../Trending.scss';
 
 export default function Trending() {
 
@@ -50,67 +51,93 @@ export default function Trending() {
 
   return (
     <div> 
+            <div class="example-1 card">
+              <div class="wrapper">
+                <div class="date">
+                  <span class="day">12</span>
+                  <span class="month">Aug</span>
+                  <span class="year">2016</span>
+                </div>
+                <div class="data">
+                  <div class="content">
+                    <span class="author">Jane Doe</span>
+                    <h1 class="title"><a href="#">Boxing icon has the will for a couple more fights</a></h1>
+                    <p class="text">The highly anticipated world championship fight will take place at 10am and is the second major boxing blockbuster in the nation after 43 years.</p>
+                    <label for="show-menu" class="menu-button"><span></span></label>
+                  </div>
+                  <input type="checkbox" id="show-menu" />
+                  <ul class="menu-content">
+                    <li>
+                      <a href="#" class="fa fa-bookmark-o"></a>
+                    </li>
+                    <li><a href="#" class="fa fa-heart-o"><span>47</span></a></li>
+                    <li><a href="#" class="fa fa-comment-o"><span>8</span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+      
       {
         hotList.map( (a, i)=>{
           return (
-            <Center bg='tomato' h='100px' color='white'>
-              <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden' key={i}>
-                <Image src={'https://image.tmdb.org/t/p/w500'+(hotList[i].poster_path)} alt={hotList[i].original_title} />
+          <Center bg='tomato' h='100px' color='white'>
+            <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden' key={i}>
+              <Image src={'https://image.tmdb.org/t/p/w500'+(hotList[i].poster_path)} alt={hotList[i].original_title} />
 
-                <Box p='6'>
-                  <Box display='flex' alignItems='baseline'>
-                    <Badge borderRadius='full' px='2' colorScheme='teal'>
-                      New
-                    </Badge>
-                    <Box
-                      color='gray.500'
-                      fontWeight='semibold'
-                      letterSpacing='wide'
-                      fontSize='xs'
-                      textTransform='uppercase'
-                      ml='2'
-                    >
-                      {property.beds} beds &bull; {property.baths} baths
-                    </Box>
-                  </Box>
-
+              <Box p='6'>
+                <Box display='flex' alignItems='baseline'>
+                  <Badge borderRadius='full' px='2' colorScheme='teal'>
+                    New
+                  </Badge>
                   <Box
-                    mt='1'
+                    color='gray.500'
                     fontWeight='semibold'
-                    as='h4'
-                    lineHeight='tight'
-                    isTruncated
+                    letterSpacing='wide'
+                    fontSize='xs'
+                    textTransform='uppercase'
+                    ml='2'
                   >
-                    {hotList[i].title}
+                    {property.beds} beds &bull; {property.baths} baths
                   </Box>
+                </Box>
 
-                  <Box>
-                    {property.formattedPrice}
-                    <Box as='span' color='gray.600' fontSize='sm'>
-                      / wk
-                    </Box>
+                <Box
+                  mt='1'
+                  fontWeight='semibold'
+                  as='h4'
+                  lineHeight='tight'
+                  isTruncated
+                >
+                  {hotList[i].title}
+                </Box>
+
+                <Box>
+                  {property.formattedPrice}
+                  <Box as='span' color='gray.600' fontSize='sm'>
+                    / wk
                   </Box>
+                </Box>
 
-                  <Box display='flex' mt='2' alignItems='center'>
-                    {Array(5)
-                      .fill('')
-                      .map((_, i) => (
-                        <StarIcon
-                          key={i}
-                          color={i < property.rating  ? 'teal.500' : 'gray.300'}
-                        />
-                      ))}
-                    <Box as='span' ml='2' color='gray.600' fontSize='sm'>
-                      {hotList[i].overview} 
-                    </Box>
+                <Box display='flex' mt='2' alignItems='center'>
+                  {Array(5)
+                    .fill('')
+                    .map((_, i) => (
+                      <StarIcon
+                        key={i}
+                        color={i < property.rating  ? 'teal.500' : 'gray.300'}
+                      />
+                    ))}
+                  <Box as='span' ml='2' color='gray.600' fontSize='sm'>
+                    {hotList[i].overview} 
                   </Box>
                 </Box>
               </Box>
+            </Box>
           </Center>
           )
         })
       }
-      
-    </div>
+      </div>
+ 
   )
 }
