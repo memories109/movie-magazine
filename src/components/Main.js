@@ -1,6 +1,6 @@
 import React from 'react';
-import { Forms } from './components/Forms';
-import { Movies } from './components/Movies';
+import  Forms  from './components/Forms';
+import  Movies  from './components/Movies';
 
 let movies = [
     {

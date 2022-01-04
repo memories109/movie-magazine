@@ -1,5 +1,8 @@
 import './App.css';
-
+import { ChakraProvider, theme } from '@chakra-ui/react'
+import ThemeToggler from './components/ThemeToggler';
+import LoginForm from './components/LoginForm';
+import Trending from './components/Trending';
 import Header from './components/Header';
 import Main from './components/Main';
 
@@ -49,14 +52,21 @@ const Footer = () => (
 function App() {
   return (
     <div>
-     
-      <div id="wrapper">
-          <Nav />
-          <Header />
-          <Main />
-          <LoadingIcon />
-          <Footer />
-      </div>
+      <ChakraProvider theme={theme}>
+        <ThemeToggler />
+          <Switch>
+            <Route path="/">
+              <LoginForm></LoginForm>
+            </Route>  
+           </Switch>
+    </ChakraProvider>
+    <div id="wrapper">
+        <Nav />
+        <Header />
+        <Main />
+        <LoadingIcon />
+        <Footer />
+    </div>
 
     </div>
 
