@@ -1,5 +1,5 @@
 import React from 'react';
-var ReactModal = require('../../lib/components/ReactModal');
+import ReactModal from 'react-modal';
 
 const customStyles = {
     overlay : {
