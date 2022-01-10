@@ -73,7 +73,7 @@ class Header extends React.Component {
                       {
                         m.genre.map(g => (
                         <li>{g}</li>))
-                      }
+                      } 
                     </ul>
                     <button>watch trailer <i className="fa fa-play-circle-o"></i></button>
                     <h3>In theaters</h3>
