@@ -26,7 +26,7 @@ function App() {
             </Route>
             <Route path="/main">
               <Header></Header> 
-            </Route>
+            </Route> 
 
            </Switch>
 

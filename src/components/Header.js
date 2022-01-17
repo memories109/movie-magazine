@@ -8,28 +8,24 @@ class Header extends React.Component {
       this.state = {
         popularMovies: [
           {
-            id : 1,
             name: "the martian",
             genre: ["adventure", "sci-fi", "thriller"],
             releaseDate: "15 Oct, 2015 (USA)",
             img: "https://68.media.tumblr.com/37aa774749579b5a20e35fd40fc269e7/tumblr_ob7vuzk7qP1uwbmnzo4_1280.jpg"
           },
           {
-            id : 2,
             name: 'dredd',
             genre: ["action", "crime", "sci-fi"],
             releaseDate: "21 September, 2012 (USA)",
             img: "https://images.alphacoders.com/503/thumb-1920-503738.jpg"
           },
           {
-            id : 3,
             name: "alien: covenent",
             genre: ["horror", "sci-fi", "thriller"],
             releaseDate: "19 May, 2017 (USA)",
             img: "https://www.slashfilm.com/wp/wp-content/images/Alien-Covenant-Trailer-Breakdown-59.jpg"
           },
           {
-            id : 4,
             name: "godzilla",
             genre: ["action", "adventure", "sci-fi"],
             releaseDate: "16 May, 2014 (USA)",
@@ -58,7 +54,7 @@ class Header extends React.Component {
             {
               popularMovies.map(m => (
                 <div
-                  key={m.id}
+                  key={m.name}
                   style={{
                     position: 'relative',
                     display: 'flex',
@@ -66,18 +62,18 @@ class Header extends React.Component {
                     height: '600px'
                   }}
                   >
-                  <img src={m.img} style={{display: 'block',position: 'absolute',top: 0,left: 0,width: '100%',height: '100%',objectFit: 'cover',verticalAlign: 'top'}}/>
+                  <img src={m.img} style={{ display: 'block', position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', verticalAlign: 'top' }}/>
                   <div className="movie-info" style={{zIndex: 2}}>
                     <h1>{m.name}</h1>
                     <ul className="genre">
                       {
                         m.genre.map(g => (
                         <li>{g}</li>))
-                      } 
+                      }
                     </ul>
                     <button>watch trailer <i className="fa fa-play-circle-o"></i></button>
-                    <h3>In theaters</h3>
-                    <h4>{m.releaseDate}</h4>
+          <h3>In theaters</h3>
+          <h4>{m.releaseDate}</h4>
                   </div>
                 </div>
               ))

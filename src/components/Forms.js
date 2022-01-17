@@ -45,4 +45,4 @@ class Forms extends React.Component {
     }
   }
 
-  export default Forms;
+export default Forms;
