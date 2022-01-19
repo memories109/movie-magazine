@@ -130,7 +130,7 @@ export default function Trending() {
                   <Box as='span' ml='2' color='gray.600' fontSize='sm'>
                     {hotList[i].overview} 
                   </Box>
-                </Box>
+                </Box> 
               </Box>
             </Box>
           </Center>
