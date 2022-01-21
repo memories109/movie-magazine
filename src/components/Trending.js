@@ -116,7 +116,7 @@ export default function Trending() {
                   <Box as='span' color='gray.600' fontSize='sm'>
                     / wk
                   </Box>
-                </Box>
+                </Box> 
 
                 <Box display='flex' mt='2' alignItems='center'>
                   {Array(5)
