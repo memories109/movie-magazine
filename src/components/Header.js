@@ -34,6 +34,8 @@ class Header extends React.Component {
         ]
       }
     }
+
+    
     render() {
       const { popularMovies } = this.state;
       const settings = {
@@ -66,7 +68,7 @@ class Header extends React.Component {
                   <div className="movie-info" style={{zIndex: 2}}>
                     <h1>{m.name}</h1>
                     <ul className="genre">
-                      { 
+                      {
                         m.genre.map(g => (
                         <li>{g}</li>))
                       }
@@ -78,7 +80,7 @@ class Header extends React.Component {
                 </div>
               ))
             }
-          </Slider>
+          </Slider> 
         </header>
       )
     }
