@@ -82,7 +82,7 @@ class Header extends React.Component {
             }
           </Slider> 
         </header>
-      )
+      ) 
     }
   }
 
