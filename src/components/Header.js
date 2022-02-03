@@ -77,7 +77,7 @@ class Header extends React.Component {
           <h3>In theaters</h3>
           <h4>{m.releaseDate}</h4>
                   </div>
-                </div>
+                </div> 
               ))
             }
           </Slider> 
