@@ -6,7 +6,7 @@ import Trending from './components/Trending';
 import Main from './components/Main';
 import Header from './components/Header';
 
-import { Link, Route, Switch } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import './Trending.scss';
 
@@ -17,20 +17,11 @@ function App() {
       <ChakraProvider theme={theme}>
         <ThemeToggler />
         <Header></Header>
-          <Switch>
-            <Route path="/login">
-              <LoginForm></LoginForm> 
-            </Route>  
-            <Route path="/trending">
-              <Trending></Trending> 
-            </Route>
-            <Route path="/main">
-              <Header></Header> 
-            </Route> 
-
-           </Switch>
-
-              
+          <Routes>
+            <Route path="/login" element={<LoginForm />} />
+            <Route path="/trending" element={<Trending />} />
+            <Route path="/main" element={<Header />} />
+          </Routes>
 
     </ChakraProvider>
     </div>

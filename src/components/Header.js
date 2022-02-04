@@ -50,6 +50,17 @@ class Header extends React.Component {
         slidesToScroll: 1,
         pauseOnHover: false
       };
+      const tempStyle={
+        display: 'block', 
+        position: 'absolute', 
+        top: 0, 
+        left: 0, 
+        width: '100%', 
+        height: '100%', 
+        objectFit: 'cover', 
+        verticalAlign: 'top' 
+      };
+        
       return (
         <header>
           <Slider {...settings}>
@@ -64,7 +75,7 @@ class Header extends React.Component {
                     height: '600px'
                   }}
                   >
-                  <img src={m.img} style={{ display: 'block', position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', verticalAlign: 'top' }}/>
+                  <img src={m.img} style={tempStyle} alt="img"/>
                   <div className="movie-info" style={{zIndex: 2}}>
                     <h1>{m.name}</h1>
                     <ul className="genre">
