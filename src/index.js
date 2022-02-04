@@ -17,11 +17,12 @@ let render = () => {
     const App = require("./App").default;
     
     ReactDOM.render(
-        <Provider store={store}>
-            <BrowserRouter>
-            <App />
-            </BrowserRouter>
-        </Provider>,
+
+        <BrowserRouter>
+            <Provider store={store}>
+                <App />
+            </Provider>
+        </BrowserRouter>,
         rootEl
     );
 };

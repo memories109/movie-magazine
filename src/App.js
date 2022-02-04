@@ -3,7 +3,7 @@ import { ChakraProvider, theme } from '@chakra-ui/react'
 import ThemeToggler from './components/ThemeToggler';
 import LoginForm from './components/LoginForm';
 import Trending from './components/Trending';
-import Main from './components/Main';
+// import Main from './components/Main';
 import Header from './components/Header';
 
 import { Routes, Route } from 'react-router-dom';
@@ -11,7 +11,7 @@ import { Routes, Route } from 'react-router-dom';
 import './Trending.scss';
 
  
-function App() {
+const App = () => {
   return (
     <div>
       <ChakraProvider theme={theme}>
@@ -25,7 +25,7 @@ function App() {
 
     </ChakraProvider>
     </div>
-  );
+  )
 }
 
 export default App;

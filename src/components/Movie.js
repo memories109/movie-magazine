@@ -62,7 +62,7 @@ class Movie extends React.Component {
       return (
         <div>
         <figure onClick={this.openModal}>
-          <img src={movie.poster}/>
+          <img src={movie.poster} alt="movie"/>
           <figcaption>
             <h5>{text_truncate(movie.title, 26)}</h5>
             <p>{movie.genre.join(', ')}</p>
