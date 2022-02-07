@@ -89,7 +89,7 @@ class Header extends React.Component {
           <h4>{m.releaseDate}</h4>
                   </div>
                 </div> 
-              ))
+              )) 
             }
           </Slider> 
         </header>
