@@ -78,7 +78,7 @@ const Tabs = () => (
     <li>tv series</li>
     <li>trailers</li>
     <li>more</li>
-</ul>
+</ul> 
 );
 
 
